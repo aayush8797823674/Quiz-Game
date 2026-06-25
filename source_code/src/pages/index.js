@@ -5,16 +5,29 @@ import Categories from '@/components/Home/Categories'
 import { useEffect } from 'react'
 
 export default function Main () {
-	useEffect(() => { window.onbeforeunload = () => null }, [])
+	useEffect(() => {
+		window.onbeforeunload = () => null
+	}, [])
 
 	return (
 		<>
 			<Head>
 				<title>Quiz Lab — Aayush Anand</title>
-            grid-template-columns: 1.4fr 1fr;
-          }
-			  `}
-			</style>
+				<meta
+					name='description'
+					content='Quiz Lab - Interactive Quiz Platform by Aayush Anand'
+				/>
+				<meta
+					name='viewport'
+					content='width=device-width, initial-scale=1'
+				/>
+			</Head>
+
+			<div className='min-h-screen'>
+				<MainHome />
+				<GameModes />
+				<Categories />
+			</div>
 		</>
 	)
 }
